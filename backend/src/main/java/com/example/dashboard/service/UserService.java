@@ -1,6 +1,6 @@
-package com.example.spring_boot.service;
+package com.example.dashboard.service;
 
-import com.example.spring_boot.dto.UserDto;
+import com.example.dashboard.dto.UserDto;
 import java.util.List;
 
 public interface UserService {

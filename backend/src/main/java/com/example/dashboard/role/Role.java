@@ -1,4 +1,4 @@
-package com.example.spring_boot.role;
+package com.example.dashboard.role;
 
 public enum Role {
     ROLE_USER,

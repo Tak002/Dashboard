@@ -1,6 +1,6 @@
-package com.example.spring_boot.entity;
+package com.example.dashboard.entity;
 
-import com.example.spring_boot.role.Role;
+import com.example.dashboard.role.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

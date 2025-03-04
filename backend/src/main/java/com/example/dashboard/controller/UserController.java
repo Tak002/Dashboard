@@ -1,7 +1,7 @@
-package com.example.spring_boot.controller;
+package com.example.dashboard.controller;
 
-import com.example.spring_boot.dto.UserDto;
-import com.example.spring_boot.service.UserService;
+import com.example.dashboard.dto.UserDto;
+import com.example.dashboard.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

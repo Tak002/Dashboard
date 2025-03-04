@@ -1,6 +1,6 @@
-package com.example.spring_boot.dto;
+package com.example.dashboard.dto;
 
-import com.example.spring_boot.role.Role;
+import com.example.dashboard.role.Role;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;

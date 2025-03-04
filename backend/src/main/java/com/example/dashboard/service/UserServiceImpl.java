@@ -1,8 +1,8 @@
-package com.example.spring_boot.service;
+package com.example.dashboard.service;
 
-import com.example.spring_boot.dto.UserDto;
-import com.example.spring_boot.entity.User;
-import com.example.spring_boot.repository.UserRepository;
+import com.example.dashboard.dto.UserDto;
+import com.example.dashboard.entity.User;
+import com.example.dashboard.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
