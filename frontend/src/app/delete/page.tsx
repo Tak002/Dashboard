@@ -23,7 +23,7 @@ export default function GetUser() {
       <h1>유저 삭제</h1>
       <input
         type="text"
-        placeholder="ID 입력 (없으면 전체 조회)"
+        placeholder="ID 입력"
         value={id}
         onChange={(e) => setId(e.target.value)}
       />

@@ -35,14 +35,17 @@ export async function DELETE(req: NextRequest) {
 
   export async function POST(req: NextRequest) {
     const body = await req.json()
-    const {name, email} = body;
+    const {email, password, role} = body;
+    const fetch_body = {email, password, role}
+
+    console.log(role)
     try {
       const res = await fetch(`${BASE_URL}`,{
         method: 'POST',
         headers: {
           "Content-Type": "application/json",  // 🔹 Content-Type 추가
         },
-        body:JSON.stringify({name,email})
+        body:JSON.stringify(fetch_body)
       });
       const data = await res.json();
       return NextResponse.json(data);
@@ -50,7 +53,7 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ message: "Failed to fetch user(s)" }, { status: 500 });
     }
   }
-
+  //수정중
   export async function PUT(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const id = searchParams.get("id");

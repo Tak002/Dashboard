@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function GetUser() {
-  const [id, setId] = useState("");
+  const [id, setPassword] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [response, setResponse] = useState("");
@@ -23,23 +23,24 @@ export default function GetUser() {
   };
 
   return (
+
     <div>
-      <h1>유저 수정</h1>
+      <h1>유저 수정 - 수정중</h1>
       <input
         type="text"
-        placeholder="아이디 입력력"
+        placeholder="기존 비밀번호 입력"
         value={id}
-        onChange={(e) =>setId(e.target.value)}
+        onChange={(e) =>setPassword(e.target.value)}
       />
       <input
         type="text"
-        placeholder="이름 입력력"
+        placeholder="기존 역할 입력"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <input
         type="text"
-        placeholder="email"
+        placeholder="기존 이메일 입력"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />

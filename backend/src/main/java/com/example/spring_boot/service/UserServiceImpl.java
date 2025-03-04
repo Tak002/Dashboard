@@ -19,8 +19,9 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDto createUser(UserDto userDto) {
         User user = User.builder()
-                .name(userDto.getName())
                 .email(userDto.getEmail())
+                .password(userDto.getPassword())
+                .role(userDto.getRole())
                 .build();
         return entityToDto(userRepository.save(user));
     }
@@ -30,7 +31,6 @@ public class UserServiceImpl implements UserService{
     public UserDto getUserById(Long id) {
         User user =  userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + id));
-
         return entityToDto(user);
 
     }
@@ -46,11 +46,13 @@ public class UserServiceImpl implements UserService{
     public UserDto updateUser(Long id, UserDto userDto) {
         User user =  userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + id));
-        user.setName(userDto.getName());
         user.setEmail(userDto.getEmail());
+        user.setPassword(userDto.getPassword());
+        user.setRole(userDto.getRole());
         return entityToDto( userRepository.save(user));
     }
-
+    
+    //삭제 유저 존재성 여부 검사 추가 필요
     @Override
     public UserDto deleteUser(Long id) {
         userRepository.deleteById(id);
@@ -60,8 +62,9 @@ public class UserServiceImpl implements UserService{
     private UserDto entityToDto(User user){
         return UserDto.builder()
                 .id(user.getId())
-                .name(user.getName())
                 .email(user.getEmail())
+                .password(user.getPassword())
+                .role(user.getRole())
                 .build();
     }
 

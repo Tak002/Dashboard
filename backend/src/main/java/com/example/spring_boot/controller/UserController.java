@@ -15,6 +15,7 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
+    //not use id in userDto
     @PostMapping
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(userDto));
@@ -30,6 +31,7 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    //not use id in userDto
     @PutMapping("/{id}")
     public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody UserDto userDto) {
         return ResponseEntity.ok(userService.updateUser(id, userDto));
