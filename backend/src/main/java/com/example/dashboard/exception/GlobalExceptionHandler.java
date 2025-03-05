@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class  GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGenericException(Exception e) {
-        ErrorResponse response = new ErrorResponse(e.getClass().getSimpleName(),e.getMessage());
-        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    public ResponseEntity<ErrorDto> handleGenericException(Exception e) {
+        ErrorDto errorDto = new ErrorDto(e.getClass().getSimpleName(),e.getMessage());
+        return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
